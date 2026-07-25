@@ -3,7 +3,7 @@
 
   # Gastos Compartidos
 
-  **Una aplicación iOS para organizar gastos en grupo y saber quién debe pagarle a quién.**
+  **Aplicación para iOS desarrollada con SwiftUI que permite registrar gastos grupales, dividirlos entre sus integrantes y calcular automáticamente cuánto debe pagar cada persona.**
 
   ![Swift](https://img.shields.io/badge/Swift-5.0-F05138?logo=swift&logoColor=white)
   ![SwiftUI](https://img.shields.io/badge/SwiftUI-iOS-0D96F6?logo=swift&logoColor=white)
