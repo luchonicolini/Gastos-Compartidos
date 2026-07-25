@@ -37,7 +37,7 @@
 		19756C2F2DDB7E7C00E85453 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19756C2E2DDB7E7B00E85453 /* CustomButton.swift */; };
 		1995A0FD2DDC5360007B3A93 /* BalanceCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1995A0FC2DDC5360007B3A93 /* BalanceCardView.swift */; };
 		19A396822DEA265400105A21 /* ExpenseComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A396812DEA265400105A21 /* ExpenseComponents.swift */; };
-		19A396842DEA26A900105A21 /* AddExpenseView .swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A396832DEA26A900105A21 /* AddExpenseView .swift */; };
+		19A396842DEA26A900105A21 /* AddExpenseView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A396832DEA26A900105A21 /* AddExpenseView+Helpers.swift */; };
 		19A396862DEA7F2E00105A21 /* hideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A396852DEA7F2E00105A21 /* hideKeyboard.swift */; };
 		19A396882DEA81AA00105A21 /* ReviewHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A396872DEA81AA00105A21 /* ReviewHandler.swift */; };
 		19BDB5FF2DED15CF001EE6CF /* EditGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19BDB5FE2DED15CF001EE6CF /* EditGroupView.swift */; };
@@ -97,7 +97,7 @@
 		19756C2E2DDB7E7B00E85453 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		1995A0FC2DDC5360007B3A93 /* BalanceCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceCardView.swift; sourceTree = "<group>"; };
 		19A396812DEA265400105A21 /* ExpenseComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseComponents.swift; sourceTree = "<group>"; };
-		19A396832DEA26A900105A21 /* AddExpenseView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddExpenseView .swift"; sourceTree = "<group>"; };
+		19A396832DEA26A900105A21 /* AddExpenseView+Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddExpenseView+Helpers.swift"; sourceTree = "<group>"; };
 		19A396852DEA7F2E00105A21 /* hideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hideKeyboard.swift; sourceTree = "<group>"; };
 		19A396872DEA81AA00105A21 /* ReviewHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewHandler.swift; sourceTree = "<group>"; };
 		19BDB5FE2DED15CF001EE6CF /* EditGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGroupView.swift; sourceTree = "<group>"; };
@@ -270,7 +270,7 @@
 			children = (
 				193D46382DB838E0004B9CB8 /* AddExpenseView.swift */,
 				19A396812DEA265400105A21 /* ExpenseComponents.swift */,
-				19A396832DEA26A900105A21 /* AddExpenseView .swift */,
+				19A396832DEA26A900105A21 /* AddExpenseView+Helpers.swift */,
 			);
 			path = AddExpense;
 			sourceTree = "<group>";
@@ -452,7 +452,7 @@
 				193D46362DB837D0004B9CB8 /* SettlementView.swift in Sources */,
 				19C436942DC260FD00E1D8C7 /* CustomAlertView.swift in Sources */,
 				1995A0FD2DDC5360007B3A93 /* BalanceCardView.swift in Sources */,
-				19A396842DEA26A900105A21 /* AddExpenseView .swift in Sources */,
+				19A396842DEA26A900105A21 /* AddExpenseView+Helpers.swift in Sources */,
 				19756C2F2DDB7E7C00E85453 /* CustomButton.swift in Sources */,
 				193D46322DB8332D004B9CB8 /* EditMemberView.swift in Sources */,
 				19D3F5002DE7D06D0091F5EE /* SettlementCardView.swift in Sources */,
