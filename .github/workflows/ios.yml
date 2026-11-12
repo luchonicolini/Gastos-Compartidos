@@ -1,0 +1,61 @@
+name: iOS build and tests
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ios-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-test:
+    runs-on: macos-15
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - name: Show Xcode version
+        run: xcodebuild -version
+      - name: Select an available iPhone simulator
+        run: |
+          xcrun simctl list devices available --json > "$RUNNER_TEMP/simulators.json"
+          python3 - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          data = json.loads((Path(os.environ['RUNNER_TEMP']) / 'simulators.json').read_text())
+          devices = [device for runtime, entries in data['devices'].items()
+                     if 'iOS' in runtime for device in entries
+                     if device.get('isAvailable') and device['name'].startswith('iPhone')]
+          if not devices:
+              raise SystemExit('No available iPhone simulator on this runner.')
+          selected = devices[0]
+          print(f"Using {selected['name']} ({selected['udid']})")
+          with open(os.environ['GITHUB_ENV'], 'a') as env:
+              env.write(f"SIMULATOR_ID={selected['udid']}\n")
+          PY
+      - name: Build app and run unit tests
+        run: |
+          xcodebuild test \
+            -project ContextoGestion/ContextoGestion.xcodeproj \
+            -scheme ContextoGestion \
+            -configuration Debug \
+            -destination "platform=iOS Simulator,id=$SIMULATOR_ID" \
+            -only-testing:ContextoGestionTests \
+            -enableCodeCoverage YES \
+            -resultBundlePath TestResults.xcresult \
+            CODE_SIGNING_ALLOWED=NO
+      - name: Upload test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ios-test-results
+          path: TestResults.xcresult
+          if-no-files-found: ignore
+          retention-days: 7
